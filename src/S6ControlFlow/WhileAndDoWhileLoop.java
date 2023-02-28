@@ -29,6 +29,8 @@ public class WhileAndDoWhileLoop {
 			System.out.println(x);
 			x++;
 		}while(x<=5);
+		
+		
 
 	}
 
