@@ -14,7 +14,6 @@ public class Sum3And5ChallengeMain {
 			}
 		}
 		System.out.println("The sum of all the numbers is " +sum);
-		
 
 	}
 
