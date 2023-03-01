@@ -1,4 +1,4 @@
-package S8_Inheritance;
+package S7_Inheritance;
 
 public class MainBankAccount {
 

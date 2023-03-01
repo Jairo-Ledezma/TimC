@@ -1,4 +1,4 @@
-package S8_Inheritance;
+package S7_Inheritance;
 
 public class BankAccountChallenge {
 
@@ -12,7 +12,7 @@ public class BankAccountChallenge {
 		if (deposit <= 0 ) {
 			System.out.println("You can't deposit a negative number");
 		}else {
-			accountBalance  = accountBalance + deposit;
+			accountBalance  +=  deposit;
 		}
 		
 		
@@ -20,9 +20,9 @@ public class BankAccountChallenge {
 	
 	public void withdrawal (double withdrawalAmount) {
 		if (withdrawalAmount > accountBalance ) {
-			System.out.println("Not enough funds");
+			System.out.println("you cant withdraw " + withdrawalAmount +  "Not enough funds you only have " + accountBalance + " available");
 		}else {
-			this.accountBalance = accountBalance - withdrawalAmount;
+			accountBalance -=  withdrawalAmount;
 			System.out.println(withdrawalAmount + " has been withdrew your new balance is " + accountBalance);
 		}
 	}
