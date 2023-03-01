@@ -1,5 +1,6 @@
 package S6ControlFlow;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class ScannerClassReviewMain {
@@ -19,13 +20,24 @@ public class ScannerClassReviewMain {
 		return "so you are " + age + " years old ";
 	}
 	
-	public static String getInputFromScanner(int currentYear) {
+	public static String getInputFromScanner() {
+		int currentYear = LocalDate.now().getYear();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Hi, What's your name?");
-		String name = scanner.next();
+		String name = scanner.nextLine();
 		System.out.println("Hi " + name + ", thanks for taking the course");
 		System.out.println("What year were your born?");
-		int age = currentYear - Integer.parseInt(scanner.next());
+		int birthDate = Integer.parseInt(scanner.nextLine());
+		if ((birthDate < currentYear - 125) || (birthDate >= currentYear)) {
+			do {
+				System.out.println("I think there is something wrong with your date of birth, can you type it again?");
+				birthDate = Integer.parseInt(scanner.nextLine());
+
+			} while ((birthDate < currentYear - 125) || (birthDate >= currentYear));
+		}
+
+		int age = currentYear - birthDate;
+
 		return "so your are " + age + " years old.";
 
 	}
@@ -35,7 +47,7 @@ public class ScannerClassReviewMain {
 		try {
 			System.out.println(getInputFromConsole(currentYear));
 		} catch (NullPointerException e) {
-			System.out.println(getInputFromScanner(currentYear));
+			System.out.println(getInputFromScanner());
 		}
 
 	}
