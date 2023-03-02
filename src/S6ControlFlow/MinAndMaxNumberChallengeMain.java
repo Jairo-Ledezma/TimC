@@ -17,10 +17,10 @@ public class MinAndMaxNumberChallengeMain {
 				if (minNumber == 0 && maxNumber == 0) {
 					minNumber = enteredNumber;
 					maxNumber = enteredNumber;
-				} else if ((enteredNumber > minNumber) && (enteredNumber < maxNumber)) {
+				} else if ((enteredNumber < minNumber) && (enteredNumber < maxNumber)) {
 					minNumber = enteredNumber;
-				} else {
-					minNumber = maxNumber;
+				} else if ((enteredNumber>maxNumber)) {
+					
 					maxNumber = enteredNumber;
 				}
 			} catch (NumberFormatException bad) {
