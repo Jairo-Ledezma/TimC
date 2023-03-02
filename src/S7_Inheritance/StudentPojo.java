@@ -2,6 +2,11 @@ package S7_Inheritance;
 
 public class StudentPojo {
 	
+	
+	// POJO's are simply classes that hold data which can be used later by other classes or methods, think of they BYB code you created that used to 
+	//give the user the actual won amount as well as the reinvestment, those classes were not modeled correctly but they were basically POJOs since they did nothing other than 
+	// be used by the logic in main to get data from them and calculate the profit and investment. 
+	
 	private String id;
 	private String name;
 	private String dateOfBirth;
