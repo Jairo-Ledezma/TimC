@@ -10,7 +10,7 @@ public class Pokemon {
 		
 	}
 	
-	public Pokemon (String name, String type , int weight) {
+	public Pokemon (String name, String type , double weight) {
 		this.name=name;
 		this.type = type;
 		this.weight = weight;
