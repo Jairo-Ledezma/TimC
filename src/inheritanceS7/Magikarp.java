@@ -1,4 +1,4 @@
-package inheritance;
+package inheritanceS7;
 
 public class Magikarp extends Pokemon{
 	

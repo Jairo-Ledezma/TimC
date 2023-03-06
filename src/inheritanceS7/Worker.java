@@ -1,4 +1,4 @@
-package inheritance;
+package inheritanceS7;
 
 import java.time.LocalDate;
 
