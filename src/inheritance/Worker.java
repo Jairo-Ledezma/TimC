@@ -6,7 +6,7 @@ public class Worker {
 	
 	protected String name;
 	private String birthDate;
-	private String endDate;
+	private java.lang.String endDate;
 	private boolean isActive;
 	
 	
