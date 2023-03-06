@@ -1,5 +1,6 @@
 package StringFormating;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Calendar;
 
@@ -27,11 +28,21 @@ public class Main {
 		System.out.println(textBlock);
 		
 		
-		int age = 35;
-		int yearOfBirth = (Calendar.YEAR) -(age);
-		System.out.printf("your age is %d%n" , age);
+		int age =  35;
+		int yearOfBirth = (LocalDate.now().getYear()) -(age);
+		System.out.printf("your age is %.2f%n" , (float)age);
 		System.out.printf("age: %d %nYear of Birth: %d" , age , yearOfBirth);
-		System.out.println(Calendar.YEAR);
+		
+		for(int i = 1; i<=100000; i*=10) {
+			System.out.printf("Printing %6d %n" , i);
+		}
+		
+		String formattedString = String.format("your age is %d", age);
+		System.out.println(formattedString);
+		
+		formattedString = "your age is %d".formatted(age);
+		System.out.println(formattedString);
+	
 		
 	}
 
