@@ -2,8 +2,8 @@ package EncapsulationS8;
 
 public class PrinterChallenge {
 
-	private static double tonerLevel = 100;
-	private static int pagesPrinted = 0;
+	private  double tonerLevel = 100;
+	private  int pagesPrinted = 0;
 	private boolean duplex;
 
 	public PrinterChallenge(boolean duplex) {
@@ -18,12 +18,12 @@ public class PrinterChallenge {
 			System.out.println(tonerAmount + " can't be added");
 			checkRemainingToner();
 		} else if ((tonerLevel + tonerAmount) > 100) {
-			System.out.println("Printer toner level was " + PrinterChallenge.tonerLevel + " only "
-					+ ( 100 - PrinterChallenge.tonerLevel) + "% was taken");
-			PrinterChallenge.tonerLevel = 100;
+			System.out.println("Printer toner level was " + tonerLevel + " only "
+					+ ( 100 - tonerLevel) + "% was taken");
+			tonerLevel = 100;
 			checkRemainingToner();
 		} else {
-			PrinterChallenge.tonerLevel += tonerAmount;
+			tonerLevel += tonerAmount;
 			checkRemainingToner();
 		}
 	}
@@ -64,12 +64,12 @@ public class PrinterChallenge {
 		if(tonerLevel == 0.0) {
 			System.out.println("please add more toner before printing");
 			return false;
-		}else if (tonerUsed > PrinterChallenge.tonerLevel) {
+		}else if (tonerUsed > tonerLevel) {
 			System.out.println("There is not enough toner in the printer, try sending less sheets to print");
 			return false;
 
 		} else {
-			PrinterChallenge.tonerLevel-=tonerUsed;
+			tonerLevel-=tonerUsed;
 			return true;
 		}
 
