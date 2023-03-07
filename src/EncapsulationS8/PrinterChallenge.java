@@ -60,7 +60,11 @@ public class PrinterChallenge {
 
 	private boolean doesPrinterHaveEnoughToner(int sheets) {
 		double tonerUsed = (double)sheets / 2;
-		if (tonerUsed > PrinterChallenge.tonerLevel) {
+		
+		if(tonerLevel == 0.0) {
+			System.out.println("please add more toner before printing");
+			return false;
+		}else if (tonerUsed > PrinterChallenge.tonerLevel) {
 			System.out.println("There is not enough toner in the printer, try sending less sheets to print");
 			return false;
 

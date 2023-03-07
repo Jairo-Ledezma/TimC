@@ -30,6 +30,12 @@ public class MainPrinter {
 		printer2.printingHistory();
 		printer1.addToner(50);
 		printer2.addToner(50);
+		printer3.printPages(200);
+		printer3.checkRemainingToner();
+		printer3.printPages(1);
+		printer3.addToner(0.5);
+		printer3.printPages(1);
+		printer3.printPages(1);
 		
 
 	}
