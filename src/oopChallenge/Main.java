@@ -1,5 +1,7 @@
 package oopChallenge;
 
+
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -7,8 +9,15 @@ public class Main {
 		
 		Hamburger plus = new PlusHamburger("plus",2);
 		
-		System.out.println(hamburger.getPrice());
-		System.out.println(plus.getPrice());
+		Drink s = new Drink("Orange" , "Small" );
+		Drink l = new Drink("Orange" , "Large" );
+		
+		MealOrder order = new MealOrder(plus , l);
+		
+		order.printTotal();
+		
+		
+		
 		
 
 	}

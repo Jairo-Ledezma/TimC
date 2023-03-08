@@ -58,7 +58,7 @@ class PlusHamburger extends Hamburger{
 		}else {
 			System.out.println("We are sorry, only 2 additional topings can be added to a " + this.getClass().getSimpleName());
 		}
-		this.price = 50 + (extraTopings*5);
+		this.price = 70 + (extraTopings*5);
 	}
 	@Override
 	public int getPrice() {
