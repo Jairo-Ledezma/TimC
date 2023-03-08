@@ -20,16 +20,26 @@ public class Main {
 		Movie com = new Comedy("Jurassic World");
 		com.watchMovie();
 		System.out.println(".".repeat(50));*/
+		
+		
 		Scanner s = new Scanner(System.in);
-		System.out.println("Please type in the type of the movie");
-		String type = s.nextLine();
-		System.out.println("Please type in the name of the movie");
-		String name = s.nextLine();
-		Movie theMovie = Movie.getMovie(type , name
-				);
-		theMovie.watchMovie();
+		while (true) {
+			System.out.println("Enter type (A for adventure, R for romantic , S for science fiction, or Q to quit )");
+			String type = s.nextLine();
+			if("Qq".contains(type)){
+				System.out.println("Closing algorithm....");
+				System.out.println("Closed");
+				break;
+			}
+			System.out.println("Enter Movie Title");
+			String name = s.nextLine();
+			Movie movie = Movie.getMovie(type, name);
+			movie.watchMovie();
+		}
 		
 		
 	}
+	
+	
 
 }

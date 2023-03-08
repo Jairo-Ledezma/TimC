@@ -45,6 +45,10 @@ class Adventure extends Movie {
 				"there are people eaten by them",
 				"Some survivors escape");
 	}
+	
+	public void watchAdventure() {
+		System.out.println("Watching an adventure");
+	}
 
 }
 
@@ -64,6 +68,11 @@ class Romantic extends Movie {
 				"falls in love with a human prince",
 				"fight against the witch and live hapily ever after");
 	}
+	
+	public void watchRomantic() {
+		System.out.println("Watching a Romance movie");
+	}
+
 
 }
 
@@ -82,6 +91,9 @@ class ScienceFiction extends Movie {
 				"Bad Aliens do Bad Stuff",
 				"Space guys chase Alliens",
 				"Planet blows up");
+	}
+	public void watchScifi() {
+		System.out.println("Watching a sci fi movie");
 	}
 
 }
