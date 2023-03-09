@@ -12,27 +12,12 @@ public class SmartKitchen {
 		coffeeMaker = new CoffeeMaker();
 	}
 
-	public Refrigerator getRefrigerator() {
-		return refrigerator;
-	}
-
-	public DishWasher getDishWasher() {
-		return dishWasher;
-	}
-
-	public CoffeeMaker getCoffeeMaker() {
-		return coffeeMaker;
-	}
 	
 	
-	public void setKitchenState(boolean coffeeFlag , boolean fridgeFlag, boolean dishWasherFlag) {
+	public void doKitchenWork(boolean coffeeFlag , boolean fridgeFlag, boolean dishWasherFlag) {
 		refrigerator.setHasWorkToDo(fridgeFlag);
 		dishWasher.setHasWorkToDo(dishWasherFlag);
 		coffeeMaker.setHasWorkToDo(coffeeFlag);
-		
-	}
-	
-	public void doKitchenWork() {
 		coffeeMaker.brewCoffee();
 		refrigerator.orderFood();
 		dishWasher.doDishes();
@@ -58,7 +43,7 @@ class Refrigerator  {
 	public void orderFood() {
 		if(hasWorkToDo) {
 		System.out.println("The Refrigerator is ordering food");
-		hasWorkToDo =false;
+		hasWorkToDo = false;
 		}
 	}
 
