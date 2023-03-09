@@ -68,7 +68,7 @@ public class MainArrayExplanation {
 		
 		System.out.println(anArray); // this will print the reference to the object array and not the actual array 
 		
-		System.out.println(Arrays.toString(anArray));
+		System.out.println(Arrays.toString(anArray)); // to print an array we need a wrapper class in this case called Arrays that has a method to string that will print the array 
 
 	}
 
