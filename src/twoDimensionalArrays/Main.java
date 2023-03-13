@@ -18,12 +18,15 @@ public class Main {
 
 		for (int i = 0; i < array2.length; i++) { // nested for loop to fill the bidimensional arrays
 			// int[] innerArray = array2[i];
-			var innerArray = array2[i]; // this locates the arrays one by one the value of the variable changes on each loop since it says array2[i] and the value i changes on each loop 
-			for (int j = 0; j < innerArray.length; j++) { // nested for loop to go trough the length of the inner array, as mentioned above the value of inner array changes, on each loop it accesses the next inner array
-				//System.out.println(array2[i][j] + "");
-				array2[i][j]=(i*10) + (j+1); // this will fill the inner arrays indexes with numbers, 
+			var innerArray = array2[i]; // this locates the arrays one by one the value of the variable changes on each
+										// loop since it says array2[i] and the value i changes on each loop
+			for (int j = 0; j < innerArray.length; j++) { // nested for loop to go trough the length of the inner array,
+															// as mentioned above the value of inner array changes, on
+															// each loop it accesses the next inner array
+				// System.out.println(array2[i][j] + "");
+				array2[i][j] = (i * 10) + (j + 1); // this will fill the inner arrays indexes with numbers,
 			}
-			//System.out.println();
+			// System.out.println();
 		}
 		
 		for(var outer : array2) { // for each loop to traverse and print the bi dimensional array 

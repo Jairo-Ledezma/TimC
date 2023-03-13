@@ -36,6 +36,7 @@ public class ArrayListExplanationMain {
 		objectList.add(new GroceryItem("oranges" , "PRODUCE" , 5));
 		objectList.add(0,new GroceryItem ("Apples" , "PRODUCE" , 6)); // we can also pass an index as the first argument to specify where in the list do we want the item to be added 
 		objectList.set(1, new GroceryItem ("Cucumber","PRODUCE" , 5)); // set method will remove the iten in that index and replace it with the one thats passed on, in this case butter is removed and cucumbers are added 
+		System.out.println(objectList);
 		objectList.remove(2); // remove method will help to remove the object or item in the index passed on as parameter in this case it removes milk
 		System.out.println(objectList);
 		
