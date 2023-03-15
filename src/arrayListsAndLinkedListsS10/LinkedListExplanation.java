@@ -191,12 +191,15 @@ public class LinkedListExplanation {
 		System.out.println("-".repeat(100));
 		
 		testIterator(placesToVisit);
+		testListIterator(placesToVisit);
 
 	}
 	
+	
+	//ITERATORS // we can only remove elements with iterator and the iterator only moves forward 
 	private static void testIterator(LinkedList <String> list) {
-		var iterator = list.iterator(); // one way
-		//ListIterator<String> iterator = (ListIterator<String>) list.iterator(); <- another way
+		var iterator =  list.iterator(); // one way
+		
 		
 		while(iterator.hasNext()) {
 			
@@ -208,6 +211,25 @@ public class LinkedListExplanation {
 		
 		System.out.println(list);
 	}
+	
+	//LIST ITERATOR // we can remove, add and set methods with ListIterator and list iterator moves forward and backwards
+	private static void testListIterator(LinkedList<String> list) {
+		var iterator = list.listIterator(); // difference here between iterator and list iterator
 
+		while (iterator.hasNext()) {
+
+			if (iterator.next().equals("Oaxaca")) {
+				iterator.add("Mexicaltsingo");
+			}
+
+		}
+		while (iterator.hasPrevious()) { // List iterator enables us to go backwards 
+			System.out.println(iterator.previous()); // backwards
+		}
+
+		System.out.println(list);
+		var iterator2 = list.listIterator(3);
+		System.out.println(iterator2.previous());
+	}
 
 }
