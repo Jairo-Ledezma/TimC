@@ -189,7 +189,25 @@ public class LinkedListExplanation {
 
 		}
 		System.out.println("-".repeat(100));
+		
+		testIterator(placesToVisit);
 
 	}
+	
+	private static void testIterator(LinkedList <String> list) {
+		var iterator = list.iterator(); // one way
+		//ListIterator<String> iterator = (ListIterator<String>) list.iterator(); <- another way
+		
+		while(iterator.hasNext()) {
+			
+			if(iterator.next().equals("zapopan")) {
+				iterator.remove(); //Note that we can test and modify a list using the iterator, in here we are removing an element in the linked list
+			}
+			//System.out.println(iterator.next());
+		}
+		
+		System.out.println(list);
+	}
+
 
 }
