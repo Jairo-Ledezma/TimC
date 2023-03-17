@@ -1,6 +1,7 @@
 package bankingChallenge;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 
 
@@ -10,19 +11,19 @@ public class Bank {
 	
 	
 	
-	public  boolean addCustomer(String customer) {
-
-		for (int i = 0; i < customerList.size(); i++) {
-			if (customerList.get(i).getName().equals(customer)) {
-				System.out.println(customer + " is already our valued customer, let's try again!");
-				return false;
-			}
-		}
-		Customer newCustomer = new Customer(customer);
+	public void addCustomer(String customer ,String deposit) {
+		double numberDeposit=Double.parseDouble(deposit); 
+		int ac = 0;
+		do {
+			ac = generateAccountNumber();
+		} while (doesAccountNumberExist(ac));
+		Customer newCustomer = new Customer(customer, numberDeposit);
+		newCustomer.setAccountNumber(ac);
 		customerList.add(newCustomer);
-		System.out.println(customer + " has been added to our list of valuable customers");
-	
-		return true;
+
+		System.out.println(customer + " has been added to our list of valuable customers with account number "
+				+ newCustomer.getAccountNumber());
+
 	}
 	
 	
@@ -69,6 +70,28 @@ public class Bank {
 			return true;
 		}
 		return false;
+	}
+	
+	private boolean doesAccountNumberExist(int ac) {
+		for (int i = 0; i<customerList.size(); i++) {
+			if (customerList.get(i).getAccountNumber() == ac) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private int generateAccountNumber() {
+		Random random = new Random();
+		int number = random.nextInt((int)Math.pow(10, 10));
+		return number;
+	}
+	
+	public void getClientList() {
+		var  iterator = customerList.listIterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
 	}
 
 
