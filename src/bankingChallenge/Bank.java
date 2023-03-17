@@ -44,9 +44,11 @@ public class Bank {
 		}
 	}
 	
-	public void getCustomerList() {
+	public void getClientStatement(String name) {
 		for(int i = 0; i<customerList.size(); i++) {
-			System.out.println("1.- " + customerList.get(i).toString());
+			if(name.equals(customerList.get(i).getName())) {
+			System.out.println(customerList.get(i).toString());
+			}
 		}
 	}
 	

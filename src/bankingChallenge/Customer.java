@@ -37,8 +37,12 @@ public class Customer {
 	}
 	
 	public void getTransactionsHistory() {
+		if(transactions.isEmpty()) {
+			System.out.println(name + " has not made any transactions yet");
+		}else {
 		
 			System.out.println(transactions);
+		}
 		
 	}
 
