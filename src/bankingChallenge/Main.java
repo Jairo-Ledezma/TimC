@@ -6,8 +6,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		/*Customer customer = new Customer ("Leslie");
+		customer.setAccountNumber();
+		System.out.println(customer.getAccountNumber());*/
 		runBankSoftware();
-
+		
 	}
 
 	public static void runBankSoftware() {
@@ -15,6 +18,7 @@ public class Main {
 		Boolean softwareFlag = true;
 		String customerName = "";
 		String stringAmount = "";
+		String deposit= "";
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Welcome to our banking software");
@@ -25,7 +29,8 @@ public class Main {
 			System.out.println("1.- for adding a new customer");
 			System.out.println("2.- to perform a transaction");
 			System.out.println("3.- to check a customer's transaction history");
-			System.out.println("4.- to see our client list");
+			System.out.println("4.- to see a specific client details");
+			System.out.println("5.- to see our full client list");
 
 			String workerDecision = scanner.nextLine();
 
@@ -38,10 +43,13 @@ public class Main {
 				break;
 
 			case "1":
-				do {
-					System.out.println("please type in the customer's name");
-					customerName = scanner.nextLine();
-				} while (!bank.addCustomer(customerName));
+
+				System.out.println("please type in the customer's name");
+				customerName = scanner.nextLine();
+				System.out.println("Please type in the initial deposit");
+				deposit=scanner.nextLine();
+				bank.addCustomer(customerName , deposit);
+
 				break;
 
 			case "2":
@@ -73,6 +81,7 @@ public class Main {
 						customerName = scanner.nextLine();
 					} while (!bank.isClientOnList(customerName));
 					bank.checkCustomerTransactions(customerName);
+					System.out.println("");
 					System.out.println("please type e to go back to the main menu");
 					customerName = scanner.nextLine();
 					if (customerName.equals("e")) {
@@ -89,6 +98,11 @@ public class Main {
 					customerName = scanner.nextLine();
 					bank.getClientStatement(customerName);
 				}
+				break;
+				
+			case "5":
+				bank.getClientList();
+				break;
 
 			}
 
